@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API en HTML</title>
+</head>
+<body>
+    <h1>Ejemplo de API en HTML</h1>
+    <button id="getUsers">Obtener Usuarios</button>
+    <div id="result"></div>
+
+    <script>
+        // Simulando una API en JavaScript
+        const usuariosAPI = [
+            { id: 1, nombre: "Juan Pérez", email: "juan@example.com" },
+            { id: 2, nombre: "María López", email: "maria@example.com" },
+            { id: 3, nombre: "Carlos García", email: "carlos@example.com" }
+        ];
+
+        document.getElementById('getUsers').addEventListener('click', () => {
+            const resultDiv = document.getElementById('result');
+
+            // Convertir el array de usuarios a JSON
+            const usuariosJSON = JSON.stringify(usuariosAPI, null, 2);
+
+            // Mostrar el resultado en el div
+            resultDiv.textContent = usuariosJSON;
+        });
+    </script>
+</body>
+</html>
+
